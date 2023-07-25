@@ -1,5 +1,9 @@
 import 'package:adv_basics/models/quiz_question.dart';
 
+// Model QuizQuestion
+// final String text;
+// final List<String> answers
+
 const questions = [
   QuizQuestion(
     'What are the main building blocks of Flutter UIs?',
