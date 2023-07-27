@@ -4,6 +4,7 @@ import 'package:intl/intl.dart';
 
 const uuid = Uuid();
 
+
 enum Category { food, travel, leisure, work }
 
 const categoryIcons = {
@@ -21,7 +22,7 @@ class Expense {
     required this.category,
   }) : id = uuid.v4();
 
-  String get formattedDate {
+  String get formattedDateBR {
     return DateFormat("dd/MM/yyyy").format(date);
   }
 
