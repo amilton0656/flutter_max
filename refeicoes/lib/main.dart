@@ -29,3 +29,4 @@ class App extends StatelessWidget {
 }
 
 //flutter pub add google_fonts
+//flutter pub add transparent_image
