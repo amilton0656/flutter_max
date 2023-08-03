@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:refeicoes/screens/categories.dart';
-import 'package:refeicoes/screens/meals.dart';
-import 'package:refeicoes/widgets/main_drawer.dart';
-import 'package:refeicoes/providers/meals_provider.dart';
+import 'package:meals/screens/categories.dart';
+import 'package:meals/screens/meals.dart';
+import 'package:meals/widgets/main_drawer.dart';
+import 'package:meals/providers/meals_provider.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../models/meal.dart';
