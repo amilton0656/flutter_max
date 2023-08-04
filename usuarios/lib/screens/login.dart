@@ -15,17 +15,19 @@ class _LoginState extends ConsumerState<Login> {
   final _senhaController = TextEditingController();
 
   void _loginHandler() {
-    final usuarios = ref.watch(usuariosProvider);
-    if (_nomeController.text == usuarios[0].nome &&
-        _senhaController.text == usuarios[0].senha) {
+    // final usuarios = ref.watch(usuariosProvider);
+
+    if (ref
+    .read(usuariosProvider.notifier)
+    .isAuthorized(_nomeController.text, _senhaController.text)) {
       print('pode entrar');
       Navigator.of(context)
-          .push(MaterialPageRoute(builder: (ctx) => ListaScreen()));
-          
-    } else {
+          .push(MaterialPageRoute(builder: (ctx) => const ListaScreen()));
+    }else {
       print('dados incorretos');
     }
-  }
+
+
 
   @override
   Widget build(BuildContext context) {
