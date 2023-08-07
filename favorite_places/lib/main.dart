@@ -49,3 +49,6 @@ class MyApp extends StatelessWidget {
 //flutter pub add google_fonts
 //flutter pub add uuid
 //flutter pub add flutter_riverpod
+//flutter pub add image_picker
+//flutter pub add location
+//flutter pub add http
