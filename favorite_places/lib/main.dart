@@ -29,7 +29,7 @@ final theme = ThemeData().copyWith(
 
 void main() {
   runApp(
-      const ProviderScope(child: MyApp()) ,
+      const ProviderScope(child: MyApp()),
   );
 }
 
@@ -52,3 +52,4 @@ class MyApp extends StatelessWidget {
 //flutter pub add image_picker
 //flutter pub add location
 //flutter pub add http
+//flutter pub add google_maps_flutter
