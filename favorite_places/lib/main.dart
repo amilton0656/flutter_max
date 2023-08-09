@@ -53,3 +53,6 @@ class MyApp extends StatelessWidget {
 //flutter pub add location
 //flutter pub add http
 //flutter pub add google_maps_flutter
+//flutter pub add path_provider
+//flutter pub add path
+//flutter pub add sqflite

@@ -7,6 +7,8 @@ import 'package:http/http.dart' as http;
 import '../models/Place.dart';
 import '../screens/map.dart';
 
+String xxx = 'AIzaSyBEAksBBSAz5uQWsmlmoBQkVz5YfrKTxhs';
+
 class LocationInput extends StatefulWidget {
   const LocationInput({super.key, required this.onSelectedLocation});
 
@@ -26,14 +28,15 @@ class _LocationInputState extends State<LocationInput> {
 
     final lat = _pickedLocation!.latitude;
     final lng = _pickedLocation!.longitude;
-    return 'https://maps.googleapis.com/maps/api/staticmap?center=$lat,$lng&zoom=16&size=600x300&maptype=roadmap&markers=color:red%7Clabel:A%7C$lat,$lng&markers=color:green%7Clabel:G%7C40.711614,-74.012318&markers=color:red%7Clabel:C%7C40.718217,-73.998284&key=AIzaAJRSyBEAksBBSAz5uQWsmlmoBQkVz5YfrKTxhs';
+    return 'https://maps.googleapis.com/maps/api/staticmap?center=$lat,$lng&zoom=16&size=600x300&maptype=roadmap&markers=color:red%7Clabel:A%7C$lat,$lng&markers=color:green%7Clabel:G%7C40.711614,-74.012318&markers=color:red%7Clabel:C%7C40.718217,-73.998284&key=' + xxx;
   }
 
   var _isGettingLocation = false;
 
   void _savePlace(double latitude, double longitude) async {
     final url = Uri.parse(
-        'https://maps.googleapis.com/maps/api/geocode/json?latlng=$latitude,$longitude&key=AIzaAJRSyBEAksBBSAz5uQWsmlmoBQkVz5YfrKTxhs');
+        'https://maps.googleapis.com/maps/api/geocode/json?latlng=$latitude,$longitude&key=' + xxx);
+
     final response = await http.get(url);
     final resData = json.decode(response.body);
     final address = resData['results'][0]['formatted_address'];
@@ -77,6 +80,7 @@ class _LocationInputState extends State<LocationInput> {
     if (permissionGranted == PermissionStatus.denied) {
       permissionGranted = await location.requestPermission();
       if (permissionGranted != PermissionStatus.granted) {
+        print('dentro do getlocation 4 - no permission');
         return;
       }
     }
@@ -96,7 +100,9 @@ class _LocationInputState extends State<LocationInput> {
   void _selectOnMap() async {
     final pickedLocation = await Navigator.of(context).push<LatLng>(
       MaterialPageRoute(
-        builder: (ctx) => MapScreen(location: _pickedLocation,),
+        builder: (ctx) => MapScreen(
+          location: _pickedLocation,
+        ),
       ),
     );
 
