@@ -7,7 +7,7 @@ import 'package:http/http.dart' as http;
 import '../models/Place.dart';
 import '../screens/map.dart';
 
-String xxx = 'AIzaSyBEAksBBSAz5uQWsmlmoBQkVz5YfrKTxhs';
+String xxx = 'AIzaAJRSyBEAksBBSAz5uQWsmlmoBQkVz5YfrKTxhs';
 
 class LocationInput extends StatefulWidget {
   const LocationInput({super.key, required this.onSelectedLocation});
